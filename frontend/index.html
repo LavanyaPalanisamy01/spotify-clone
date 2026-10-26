@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spotify Clone</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <h2 class="logo">♫ Spotify</h2>
+    <nav>
+      <a href="#" class="active">⌂ Home</a>
+      <a href="#albums">⌕ Search</a>
+      <a href="#library">▤ Your Library</a>
+    </nav>
+    <div class="library" id="library">
+      <h3>Your Library</h3>
+      <p>Create your first playlist.</p>
+      <button id="createPlaylist">+ Create playlist</button>
+      <p id="playlistMessage"></p>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header>
+      <div class="nav-buttons">
+        <button aria-label="Go back">‹</button>
+        <button aria-label="Go forward">›</button>
+      </div>
+      <button class="profile">Guest</button>
+    </header>
+
+    <section class="welcome">
+      <p>YOUR MUSIC, YOUR WORLD</p>
+      <h1>Good music. Good mood.</h1>
+      <p>Discover your next favorite sound.</p>
+    </section>
+
+    <section id="albums">
+      <h2>Made for you</h2>
+      <div class="cards">
+        <article class="card" data-song="Dreamscape">
+          <div class="cover cover-one">☁</div>
+          <h3>Dreamscape</h3>
+          <p>Chill beats for your day</p>
+          <button class="play" aria-label="Play Dreamscape">▶</button>
+        </article>
+        <article class="card" data-song="Night Drive">
+          <div class="cover cover-two">☾</div>
+          <h3>Night Drive</h3>
+          <p>Sounds for late nights</p>
+          <button class="play" aria-label="Play Night Drive">▶</button>
+        </article>
+        <article class="card" data-song="Golden Hour">
+          <div class="cover cover-three">☀</div>
+          <h3>Golden Hour</h3>
+          <p>Feel-good favorites</p>
+          <button class="play" aria-label="Play Golden Hour">▶</button>
+        </article>
+        <article class="card" data-song="Deep Focus">
+          <div class="cover cover-four">✦</div>
+          <h3>Deep Focus</h3>
+          <p>Music to help you concentrate</p>
+          <button class="play" aria-label="Play Deep Focus">▶</button>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="player">
+    <div class="track-info">
+      <div class="mini-cover">♫</div>
+      <div>
+        <strong id="songTitle">Choose a track</strong>
+        <p>Spotify Clone</p>
+      </div>
+    </div>
+    <div class="controls">
+      <button id="playPause" aria-label="Play or pause">▶</button>
+      <p id="playerStatus">Ready to play</p>
+    </div>
+    <div class="volume">♪ <input type="range" min="0" max="100" value="70" aria-label="Volume" /></div>
+  </footer>
+</body>
+</html>

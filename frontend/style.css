@@ -1,0 +1,355 @@
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #ffffff;
+  background: #000000;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #000;
+  padding: 10px 10px 100px;
+}
+
+button, a {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.sidebar {
+  position: fixed;
+  top: 10px;
+  bottom: 100px;
+  left: 10px;
+  width: 230px;
+  padding: 24px 18px;
+  border-radius: 10px;
+  background: #121212;
+}
+
+.logo {
+  color: #1ed760;
+  margin: 0 0 35px;
+  font-size: 27px;
+}
+
+nav {
+  display: grid;
+  gap: 12px;
+}
+
+nav a {
+  color: #b3b3b3;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 0;
+}
+
+nav a:hover,
+nav a.active {
+  color: #fff;
+}
+
+.library {
+  margin-top: 35px;
+  color: #b3b3b3;
+}
+
+.library h3 {
+  color: #fff;
+}
+
+.library button {
+  background: #fff;
+  color: #000;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 22px;
+  font-weight: bold;
+}
+
+.main {
+  margin-left: 240px;
+  min-height: calc(100vh - 110px);
+  padding: 16px 26px 40px;
+  border-radius: 10px;
+  background: linear-gradient(#252525, #121212 380px);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.nav-buttons button {
+  background: #090909;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 25px;
+}
+
+.profile {
+  border: 0;
+  background: #080808;
+  color: #fff;
+  border-radius: 20px;
+  padding: 9px 18px;
+}
+
+.welcome {
+  padding: 45px 0 35px;
+}
+
+.welcome p {
+  color: #b3b3b3;
+}
+
+.welcome h1 {
+  font-size: clamp(30px, 4vw, 48px);
+  margin: 10px 0;
+}
+
+#albums h2 {
+  margin-bottom: 20px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.card {
+  position: relative;
+  min-width: 0;
+  padding: 12px;
+  border-radius: 8px;
+  background: #181818;
+  transition: background 0.2s;
+}
+
+.card:hover {
+  background: #282828;
+}
+
+.cover {
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border-radius: 5px;
+  font-size: 65px;
+  color: #fff;
+}
+
+.cover-one {
+  background: linear-gradient(135deg, #5b4bce, #e7a6e5);
+}
+
+.cover-two {
+  background: linear-gradient(135deg, #071b37, #268da2);
+}
+
+.cover-three {
+  background: linear-gradient(135deg, #f6b43c, #e75d4f);
+}
+
+.cover-four {
+  background: linear-gradient(135deg, #125c48, #b3d8a5);
+}
+
+.card h3 {
+  font-size: 15px;
+  margin: 15px 0 8px;
+}
+
+.card p {
+  font-size: 12px;
+  color: #b3b3b3;
+  line-height: 1.5;
+}
+
+.play {
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 50%;
+  background: #1ed760;
+  color: #000;
+  position: absolute;
+  right: 18px;
+  bottom: 65px;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: 0.2s;
+}
+
+.card:hover .play,
+.play:focus-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.player {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 90px;
+  background: #080808;
+  border-top: 1px solid #282828;
+  padding: 12px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.track-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.mini-cover {
+  display: grid;
+  place-items: center;
+  background: #333;
+  width: 48px;
+  height: 48px;
+  border-radius: 5px;
+  color: #1ed760;
+  font-size: 25px;
+}
+
+.track-info strong {
+  font-size: 13px;
+}
+
+.track-info p {
+  color: #b3b3b3;
+  font-size: 12px;
+  margin: 5px 0 0;
+}
+
+.controls {
+  text-align: center;
+}
+
+.controls button {
+  background: #1ed760;
+  border: none;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+}
+
+.controls p {
+  font-size: 11px;
+  color: #b3b3b3;
+  margin: 4px 0 0;
+}
+
+.volume {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.volume input {
+  width: 85px;
+  accent-color: #1ed760;
+}
+
+@media (max-width: 1000px) {
+  .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .sidebar {
+    width: 175px;
+  }
+
+  .main {
+    margin-left: 185px;
+    padding: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 0 0 90px;
+  }
+
+  .sidebar {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 16px;
+  }
+
+  .logo {
+    margin-bottom: 15px;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+  }
+
+  .library {
+    display: none;
+  }
+
+  .main {
+    margin: 8px 0;
+    padding: 18px 14px;
+  }
+
+  .welcome {
+    padding: 24px 0;
+  }
+
+  .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .player {
+    height: 80px;
+    padding: 10px;
+    gap: 8px;
+  }
+
+  .volume {
+    display: none;
+  }
+
+  .play {
+    opacity: 1;
+    transform: none;
+    width: 36px;
+    height: 36px;
+    right: 12px;
+    bottom: 60px;
+  }
+}
